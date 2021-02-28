@@ -17,7 +17,7 @@ export default function SearchInput(props) {
         onFocus={onFocus}
         placeholder={placeholder}
         autoFocus={autoFocus}
-        type="numeric"
+        type="number"
       />
     </StyledSearchInput>
   )
