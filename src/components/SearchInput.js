@@ -28,7 +28,7 @@ SearchInput.defaultProps = {
 }
 
 SearchInput.propTypes = {
-  searchString: PropTypes.string.isRequired,
+  searchString: PropTypes.number.isRequired,
   setSearchString: PropTypes.func.isRequired,
   autoFocus: PropTypes.bool,
   onBlur: PropTypes.func.isRequired,

@@ -25,7 +25,8 @@ export default function ReactSearchAutocomplete(props) {
     placeholder,
     autoFocus,
     styling,
-    resultStringKeyName
+    resultStringKeyName,
+    resultTemplate
   } = props
 
   const theme = { ...defaultTheme, ...styling }
@@ -94,6 +95,7 @@ export default function ReactSearchAutocomplete(props) {
             showIcon={showIcon}
             maxResults={maxResults}
             resultStringKeyName={resultStringKeyName}
+            resultTemplate={resultTemplate}
           />
         </div>
       </StyledReactSearchAutocomplete>

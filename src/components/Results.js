@@ -4,7 +4,7 @@ import { SearchIcon } from './SearchIcon'
 import styled from 'styled-components'
 
 export default function Results(props) {
-  const { results, onClick, setDisplayString, showIcon, maxResults, resultStringKeyName } = props
+  const { results, onClick, setDisplayString, showIcon, maxResults, resultStringKeyName, resultTemplate } = props
 
   const handleClick = (result) => {
     onClick(result)
@@ -18,22 +18,15 @@ export default function Results(props) {
   return (
     <StyledResults>
       <div className="line" />
-      <ul>
+      <ul className="results">
         {results.slice(0, maxResults).map((result) => {
           return (
-            <li
+            <li className="result"
               key={`rsa-result-${result.id}`}
               onMouseDown={() => handleClick(result)}
               onClick={() => handleClick(result)}
             >
-              {showIcon && (
-                <div className="icon">
-                  <SearchIcon />
-                </div>
-              )}
-              <div className="ellipsis" title={result[resultStringKeyName]}>
-                {result[resultStringKeyName]}
-              </div>
+              {resultTemplate(result)}
             </li>
           )
         })}
